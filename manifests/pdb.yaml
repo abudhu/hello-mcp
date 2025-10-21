@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: hi-mcp
+  labels:
+    app.kubernetes.io/name: hi-mcp
+    app.kubernetes.io/part-of: hi-mcp-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: hi-mcp
